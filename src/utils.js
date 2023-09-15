@@ -7,7 +7,16 @@ export function getId() {
 
 export function getBackUrl() {
     const qs = new URLSearchParams(window.location.search);
-    const backUrl = qs.get('backUrl');
+    let backUrl = qs.get('backUrl');
+
+    try {
+        const url = new URL(backUrl);
+        if (url.protocol.toLowerCase() !== "http:") {
+            backUrl = null;
+        }
+    } catch {
+        backUrl = null;
+    }
 
     return backUrl;
 }
