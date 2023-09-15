@@ -1,0 +1,1 @@
+window.localStorage.setItem('secret', 'SECRET_TOKEN');
