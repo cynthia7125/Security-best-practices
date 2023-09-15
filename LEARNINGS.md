@@ -21,3 +21,6 @@
 1. URLs
 2. Cookies
 3. Storage APIs
+
+## JavaScript URLs in React
+![Alt text](react-urls.png)
