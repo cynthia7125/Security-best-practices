@@ -16,10 +16,10 @@
     <script type="module" src="/dist/NewBugSSR.js"></script>
     <script type="module" src="/dist/secrets.js"></script>
     <script>
-      window.CONFIG = <%- JSON.stringify(config) %>;
+      window.CONFIG = <%- JSON.stringify(config).replace(/</g, '\\u003c') %>;
     </script>
     <% if (req.query.footnote) { %>
-      <footer><%= req.query.footnote %></footer>
-    <% } %>    
+    <footer><%= req.query.footnote %></footer>
+    <% } %>
   </body>
 </html>
