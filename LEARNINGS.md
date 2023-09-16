@@ -24,3 +24,11 @@
 
 ## JavaScript URLs in React
 ![Alt text](react-urls.png)
+
+# Prevent XSS when Parsing Components by:
+1. Avoid untrustedinput - Accepting untrusted code can easily lead to XSS.
+2. Sanitize with DOMPurify - can be acceptable if components are pure HTML.
+
+# Benefits of Server-side Rendering(SSR)
+1. Better Performance - For complex application logic it might be faster to render on the server.
+2. Faster load time -  initial response comes with initial data, saving a road trip to the server.

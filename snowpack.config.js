@@ -1,20 +1,21 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: '/',
-    src: '/dist'
+    public: "/",
+    src: "/dist",
   },
-  plugins: [
-  ],
+  plugins: [],
   routes: [
+    {
+      match: "routes",
+      src: "/new.html",
+      dest: (req, res) => proxy.web(req, res, { port: 8081 }),
+    },
   ],
-  optimize: {
-  },
-  packageOptions: {
-  },
+  optimize: {},
+  packageOptions: {},
   devOptions: {
-    open: "none"
+    open: "none",
   },
-  buildOptions: {
-  },
+  buildOptions: {},
 };
