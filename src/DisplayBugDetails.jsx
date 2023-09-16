@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify';
 
 export function DisplayBugDetails(props) {
     function handlePrint(e) {
@@ -25,7 +26,9 @@ export function DisplayBugDetails(props) {
                 </li>
                 <li>
                     <label htmlFor="description">Description</label>
-                    <textarea id="description" readOnly="readonly" value={props.bug.description}></textarea>
+                    <output id="description"
+                            dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.bug.description)}}></output>
+                    {/* <textarea id="description" readOnly="readonly" value={props.bug.description}></textarea> */}
                 </li>
                 <li className="button">
                     <button type="submit">Edit</button>
